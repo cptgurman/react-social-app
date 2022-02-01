@@ -1,0 +1,30 @@
+.dialogs{
+  display: grid;
+  grid-template-areas:
+  "pageName pageName pageName"
+  "dialogsItems messages messages" ;
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+  
+.pageName{
+  grid-area: pageName;
+}
+
+.dialogsItems{
+  grid-area: dialogsItems;
+}
+
+.dialog{
+
+}
+
+.messages{
+  grid-area: messages;
+}
+
+.message{
+  
+}
+

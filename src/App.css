@@ -1,18 +1,16 @@
-.app-wrapper{
-  height: 100vh;
-  display: grid;
-  grid-template-areas: 
-  "header header header"
-  "nav main main"
-  "footer footer footer";
-  grid-template-rows: 60px 1fr 30px;
-  grid-template-columns: 2fr 10fr;
-  grid-gap: 10px;
-  
+.app-wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "header header header" 
+    "nav main main"
+    "footer footer footer";
+    grid-template-rows: 60px 1fr 30px;
+    grid-template-columns: 2fr 10fr;
+    grid-gap: 10px;
 }
 
-
-
-
-
-
+.app-wrapper-content {
+    grid-area: main;
+    background-color: rgb(255, 92, 220);
+}

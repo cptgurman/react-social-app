@@ -1,25 +1,27 @@
 import react from 'react';
+import { NavLink } from 'react-router-dom';
 import css from './Navbar.module.css';
 
+let style = ({ isActive }) => isActive ? css.active : css.item;
+// Получаем активную ссылку и передаем css для активной ссылкиуб
 
-
-let Navbar = () => {
+const Navbar = () => {
   return (
     <nav className={css.navbar}>
-      <div className={css.item}>
-        Profile
+      <div>
+        <NavLink to="/profile" className={style}>Profile</NavLink>
       </div>
-      <div className={css.item}>
-        Messages
+      <div>
+        <NavLink to="/dialogs" className={style}>Messages</NavLink>
       </div>
-      <div className={css.item}>
-        Photoes
+      <div>
+        <NavLink to="/photoes" className={style}>Photoes</NavLink>
       </div>
-      <div className={css.item}>
-        Music
+      <div>
+        <NavLink to="/music" className={style}>Music</NavLink>
       </div>
-      <div className={css.item}>
-        Settings
+      <div>
+        <NavLink to="/settings" className={style}>Settings</NavLink>
       </div>
     </nav>
   );

@@ -5,4 +5,10 @@
 
   .item{
     color: rgb(255, 255, 255);
+    text-decoration: none;
+  }
+
+  .active {
+    color: blue;
+    text-decoration: none;
   }
