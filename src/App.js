@@ -1,6 +1,6 @@
 import react from 'react';
 import './App.css';
-import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, NavLink, Route, Routes, Link } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Footer from './components/Footer/Footer';
@@ -12,7 +12,8 @@ import Photoes from './components/Photoes/Photoes';
 
 
 
-const App = () => {
+
+const App = (props) => {
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -21,8 +22,8 @@ const App = () => {
         <Footer />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/dialogs" element={<Dialogs />} />
+            <Route path="/profile" element={<Profile postsData={props.state.profilePage.postsData} />} />
+            <Route path="/dialogs" element={<Dialogs dialogsData={props.state.dialogsPage.dialogsData} messagesData={props.state.dialogsPage.messagesData} />} />
             <Route path="/music" element={<Music />} />
             <Route path="/settings" element={<Settings />} />
             <Route path="/photoes" element={<Photoes />} />

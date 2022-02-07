@@ -1,10 +1,7 @@
-import react from 'react';
 import Post from './Post/Post';
 import css from './Posts.module.css';
 
-
-
-let Posts = () => {
+let Posts = (props) => {
     return (
         <div>
             My posts
@@ -13,8 +10,7 @@ let Posts = () => {
                 <button> add post </button>
             </div>
             <div className={css.posts}>
-                <Post message='Hi how are you?' likes='likes: 15' />
-                <Post message='First projct' likes='likes: 21' />
+                {props.postsData.map(post => <Post key={post.id} post={post.text} likes={post.likes} />)}
             </div>
         </div>
     );

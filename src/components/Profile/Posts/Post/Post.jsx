@@ -9,9 +9,9 @@ let Post = (props) => {
         <div className={css.post}>
             <img src="https://vraki.net/sites/default/files/inline/images/30_55.jpg" alt="" className={css.avatar} />
             <div className={css.item}>
-                {props.message}
+                {props.post}
             </div>
-            <span className='like'>  {props.likes} </span>
+            <span className='like'>  Лайков: {props.likes} </span>
         </div>
 
     );

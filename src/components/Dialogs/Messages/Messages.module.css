@@ -16,9 +16,15 @@
   grid-area: dialogsItems;
 }
 
+.dialog{
+
+}
 
 .messages{
   grid-area: messages;
 }
 
+.message{
+  
+}
 
