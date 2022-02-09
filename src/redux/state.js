@@ -1,7 +1,12 @@
+import { rerenderEntireTree } from "../render";
+
+
+
 let state = {
     profilePage: {
         postsData: [{ id: 1, text: 'Hi how are you?', likes: 15 },
-        { id: 2, text: 'First projct', likes: 22 },],
+        { id: 2, text: 'First projct', likes: 22 }],
+        newPostText: 'текст из ньюпоста'
     },
 
     dialogsPage: {
@@ -16,4 +21,24 @@ let state = {
         { id: 3, message: 'Lorem ipsum dolor sit amet consectetur.' },]
     },
 }
+
+window.state = state;
+
+export let addPost = () => {
+    let newPost = {
+        id: 5,
+        text: state.profilePage.newPostText,
+        likes: 0
+    };
+    state.profilePage.postsData.push(newPost);
+    state.profilePage.newPostText = '';
+    rerenderEntireTree(state);
+}
+
+export let textareaChange = (text) => {
+    let newPostText = text;
+    state.profilePage.newPostText = newPostText;
+    rerenderEntireTree(state);
+}
+
 export default state;
