@@ -1,10 +1,23 @@
 import reportWebVitals from './reportWebVitals';
-import { rerenderEntireTree } from './render';
-import state from './redux/state';
+import state, { subsbcribe } from './redux/state';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import { addPost, textareaChange } from './redux/state';
 
+let rerenderEntireTree = (state) => {
+    ReactDOM.render(
+        <React.StrictMode>
+            <App state={state} addPost={addPost} textareaChange={textareaChange} />
+        </React.StrictMode>,
+        document.getElementById('root')
+    );
+}
 
 rerenderEntireTree(state);
 
+subsbcribe(rerenderEntireTree);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

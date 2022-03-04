@@ -1,6 +1,6 @@
-import { rerenderEntireTree } from "../render";
-
-
+let rerenderEntireTree = () => {
+    console.log('state changed');
+}
 
 let state = {
     profilePage: {
@@ -41,4 +41,9 @@ export let textareaChange = (text) => {
     rerenderEntireTree(state);
 }
 
+export const subsbcribe =(observer) =>{
+rerenderEntireTree = observer;
+}
+
 export default state;
+ 
