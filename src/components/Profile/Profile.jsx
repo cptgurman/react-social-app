@@ -9,8 +9,7 @@ let Profile = (props) => {
             <ProfileInfo avatar='AVATAR' discription='описание' />
             <Posts postsData={props.postsData.postsData}
                 newPostText={props.postsData.newPostText}
-                addPost={props.addPost}
-                textareaChange={props.textareaChange}
+                dispatch={props.dispatch}
             />
         </main>
     );
