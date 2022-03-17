@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/state';
+import { updateNewPostTextActionCreator, addPostActionCreator } from '../../../redux/profile-reducer';
 import Post from './Post/Post';
 import css from './Posts.module.css';
 
@@ -11,7 +11,6 @@ let Posts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        //props.addPost();
         props.dispatch(addPostActionCreator());
     }
 

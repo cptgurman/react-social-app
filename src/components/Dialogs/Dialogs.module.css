@@ -23,7 +23,3 @@
   grid-template-areas:
   "message"
 }
-
-.typemessage {
-  grid-area: message;
-}

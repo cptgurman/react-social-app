@@ -2,14 +2,12 @@ import css from './Dialogs.module.css';
 import React from 'react';
 import DialogComponent from './Dialog/Dialog';
 import MessageComponent from './Messages/Messages';
-import { sendTextMessageActionCreator, updateTextMessageActionCreator } from '../../redux/state';
-
-
-
-
+import { updateTextMessageActionCreator, sendTextMessageActionCreator } from '../../redux/dialogs-reducer';
 
 
 const Dialogs = (props) => {
+    let messages = props.data.messagesData.map(element => <MessageComponent key={element.id} messageText={element.message} />)
+    let dialogs = props.data.dialogsData.map(dialog => <DialogComponent key={dialog.id} name={dialog.name} path={dialog.id.toString()} />)
 
     let mesText = React.createRef();
 
@@ -30,13 +28,15 @@ const Dialogs = (props) => {
             </div>
 
             <div className={css.dialogsItems}>
-                {props.data.dialogsData.map(dialog => <DialogComponent key={dialog.id} name={dialog.name} path={dialog.id.toString()} />)}
+                {dialogs}
             </div>
 
             <div className={css.messages}>
-                {props.data.messagesData.map(element => <MessageComponent key={element.id} messageText={element.message} />)}
+                <div>
+                    {messages}
+                </div>
                 <div className={css.typemessage}>
-                    <textarea cols="30" rows="10" onChange={updateMessage} ref={mesText} value={props.data.messageText} />
+                    <textarea cols="30" rows="10" placeholder='Enter message' onChange={updateMessage} ref={mesText} value={props.data.messageText} />
                     <button onClick={sendMessage}> send message </button>
                 </div>
             </div>
